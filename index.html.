@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Vacations Tours | Traslados y Viajes</title>
+    <style>
+        :root {
+            --azul: #00aaff;
+            --azul-oscuro: #0088cc;
+            --naranja: #ff9900;
+            --gris-fondo: #f4f4f4;
+            --verde-exito: #28a745;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: var(--gris-fondo);
+            color: #333;
+        }
+
+        header {
+            background: var(--azul);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #444;
+            border-left: 5px solid var(--azul);
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-3px); }
+
+        .pago-info {
+            background: #e1f5fe;
+            color: #01579b;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            margin: 10px 0;
+            border: 1px dashed #0288d1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .precio {
+            font-size: 1.3em;
+            color: var(--verde-exito);
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .detalles {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .tag-incluye {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-bottom: 8px;
+        }
+
+        .fuera-ciudad { border: 2px solid var(--naranja); background: #fffdfa; }
+
+        .lista-destinos { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+        .tag { background: #eee; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; }
+
+        button {
+            background: var(--azul);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-naranja { background: var(--naranja); }
+        button:hover { opacity: 0.9; }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .footer-info {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Family Vacations Tours</h1>
+    <p>Los mejores planes turísticos y traslados</p>
+</header>
+
+<section>
+    
+    <h2>✈️ Traslados Aeropuerto - Hotel</h2>
+    
+    <div class="card">
+        <h3>Nacional (Auto 4 pax) 🚙</h3>
+        <p class="precio">$50.000</p>
+        <button onclick="cotizar('Traslado Nacional Auto')">Cotizar ahora</button>
+    </div>
+
+    <div class="card">
+        <h3>Nacional (Van 10 pax) 🚐</h3>
+        <p class="precio">$80.000</p>
+        <button onclick="cotizar('Traslado Nacional Van')">Cotizar ahora</button>
+    </div>
+
+    <div class="card">
+        <h3>Internacional (Auto 4 pax) 🚙</h3>
+        <p class="precio">$80.000</p>
+        <button onclick="cotizar('Traslado Internacional Auto')">Cotizar ahora</button>
+    </div>
+
+    <div class="card">
+        <h3>Internacional (Van 10 pax) 🚐</h3>
+        <p class="precio">$130.000</p>
+        <button onclick="cotizar('Traslado Internacional Van')">Cotizar ahora</button>
+    </div>
+
+    <h2>🚐 Nuestra Flota</h2>
+    <p style="margin-left: 10px; color: #666; font-size: 0.9em;">Vehículos modernos y cómodos para tu viaje.</p>
+
+    <div style="display: flex; overflow-x: auto; gap: 15px; padding: 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+        <div class="card" style="min-width: 260px; padding: 0; flex-shrink: 0; scroll-snap-align: start;">
+            <img src="https://i.ibb.co/qF5WsMHL/image.png" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div style="padding: 15px;"><h4>Microbús de Turismo</h4><p style="font-size: 0.8em; color: #777;">Ideal para grupos grandes.</p></div>
+        </div>
+        <div class="card" style="min-width: 260px; padding: 0; flex-shrink: 0; scroll-snap-align: start;">
+            <img src="https://i.ibb.co/wNrjt4kw/image.png" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div style="padding: 15px;"><h4>Van Especializada</h4><p style="font-size: 0.8em; color: #777;">Confort y aire acondicionado.</p></div>
+        </div>
+        <div class="card" style="min-width: 260px; padding: 0; flex-shrink: 0; scroll-snap-align: start;">
+            <img src="https://i.ibb.co/MxnM6kTj/image.png" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div style="padding: 15px;"><h4>Transporte Grupal</h4><p style="font-size: 0.8em; color: #777;">Seguridad en cada trayecto.</p></div>
+        </div>
+        <div class="card" style="min-width: 260px; padding: 0; flex-shrink: 0; scroll-snap-align: start;">
+            <img src="https://i.ibb.co/0jfKz13Z/image.png" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div style="padding: 15px;"><h4>Campero 4x4</h4><p style="font-size: 0.8em; color: #777;">Perfecto para traslados privados.</p></div>
+        </div>
+        <div class="card" style="min-width: 260px; padding: 0; flex-shrink: 0; scroll-snap-align: start;">
+            <img src="https://i.ibb.co/yrmQgKB/image.png" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div style="padding: 15px;"><h4>Van Ejecutiva</h4><p style="font-size: 0.8em; color: #777;">Servicio VIP y discreción.</p></div>
+        </div>
+    </div>
+
+    <h2>🛣️ Viajes Fuera de la Ciudad</h2>
+    <div class="card fuera-ciudad">
+        <h3>Servicio Intermunicipal Privado</h3>
+        <p class="detalles">Realizamos traslados a cualquier destino fuera de la ciudad.</p>
+        <div class="lista-destinos">
+            <span class="tag">📍 Cartagena</span><span class="tag">📍 Santa Marta</span><span class="tag">📍 Barranquilla</span><span class="tag">📍 Mompox</span>
+        </div>
+        <input id="destino-otro" type="text" placeholder="Escribe otro destino">
+        <div style="margin-top: 15px; background: #fff3e0; padding: 10px; border-radius: 8px;">
+            <label style="display: flex; align-items: center; cursor: pointer; font-size: 14px; font-weight: bold;">
+                <input type="checkbox" id="con-guia" style="width: 20px; height: 20px; margin-right: 10px;"> 🚩 ¿Deseas agregar Guía? <span style="font-weight:normal; margin-left:4px;">(Costo adicional)</span>
+            </label>
+        </div>
+        <button class="btn-naranja" onclick="cotizarPersonalizado()" style="margin-top: 15px;">📲 Consultar tarifa</button>
+    </div>
+
+<h2>🏝️ Planes de Playa y Tours</h2>
+
+<div class="card" style="padding:0; overflow:hidden;">
+    <img src="https://i.ibb.co/Lh5vjRQZ/image.png" style="width:100%; height:200px; object-fit:cover;">
+    <div style="padding:20px;">
+        <h3>Playa Blanca 🏖️</h3>
+        <p class="precio">Desde $90.000 x persona</p>
+        <div class="tag-incluye">✓ Transporte + Almuerzo + Instalaciones</div>
+        <div style="margin: 15px 0; background: #e8f5e9; padding: 10px; border-radius: 8px; display: flex; justify-content: center; align-items: center; border: 1px solid #c8e6c9;">
+            <label style="display:flex; align-items:center; cursor:pointer; font-size: 13px; font-weight: bold; color: #2e7d32;">
+                <input type="checkbox" id="guia-playa" style="margin-right:10px; width:18px; height:18px;"> 🚩 Agregar Guía <span style="font-weight:normal; margin-left:4px;">(Costo adicional)</span>
+            </label>
+        </div>
+        <button onclick="cotizarTour('Playa Blanca', 'guia-playa')">Reservar Plan</button>
+    </div>
+</div>
+
+<div class="card" style="padding:0; overflow:hidden;">
+    <img src="https://i.ibb.co/20mgB57f/image.png" style="width:100%; height:200px; object-fit:cover;">
+    <div style="padding:20px;">
+        <h3>Volcán del Totumo 🌋</h3>
+        <p class="precio">Precio a convenir</p>
+        <p class="detalles">Consulta disponibilidad y tarifas personalizadas según tu grupo.</p>
+        <div style="margin: 15px 0; background: #e8f5e9; padding: 10px; border-radius: 8px; display: flex; justify-content: center; align-items: center; border: 1px solid #c8e6c9;">
+            <label style="display:flex; align-items:center; cursor:pointer; font-size: 13px; font-weight: bold; color: #2e7d32;">
+                <input type="checkbox" id="guia-totumo" style="margin-right:10px; width:18px; height:18px;"> 🚩 Agregar Guía <span style="font-weight:normal; margin-left:4px;">(Costo adicional)</span>
+            </label>
+        </div>
+        <button onclick="cotizarTour('Volcán del Totumo', 'guia-totumo')">Cotizar ahora</button>
+    </div>
+</div>
+
+<div class="card" style="padding:0; overflow:hidden;">
+    <img src="https://i.ibb.co/3yWJQ49Y/image.png" style="width:100%; height:200px; object-fit:cover;">
+    <div style="padding:20px;">
+        <h3>Islas Privadas 🛥️</h3>
+        <p class="precio">Desde $350.000 x persona</p>
+        <div class="tag-incluye">✓ Transporte + Almuerzo Especial</div>
+        <div style="margin: 15px 0; background: #e8f5e9; padding: 10px; border-radius: 8px; display: flex; justify-content: center; align-items: center; border: 1px solid #c8e6c9;">
+            <label style="display:flex; align-items:center; cursor:pointer; font-size: 13px; font-weight: bold; color: #2e7d32;">
+                <input type="checkbox" id="guia-islas" style="margin-right:10px; width:18px; height:18px;"> 🚩 Agregar Guía <span style="font-weight:normal; margin-left:4px;">(Costo adicional)</span>
+            </label>
+        </div>
+        <button onclick="cotizarTour('Islas Privadas', 'guia-islas')">Reservar Plan</button>
+    </div>
+</div>
+
+
+    <div class="card" style="background: #222; color: white;">
+        <h2>📅 Agendar Viaje </h2>
+          <div class="pago-info" style="background: #333; color: #00aaff; border-color: #444;">
+        💳 <span>Aceptamos pagos con <b>datáfono</b>. Precios sujetos a impuestos del gobierno.</span>
+    </div>
+
+    <input id="form-nombre" type="text" placeholder="Tu nombre">
+    <input id="form-whatsapp" type="text" placeholder="Número de WhatsApp">
+    <input id="form-fecha" type="date">
+    <input id="form-hora" type="time">
+    <button style="margin-top: 10px; background: var(--azul);" onclick="enviarFormulario()">Enviar Solicitud</button>
+    </div>
+
+</section>
+
+<div class="footer-info">
+    Family Vacations Tours © 2024 - Todos los derechos reservados
+</div>
+
+<script>
+    const WHATSAPP_NUMBER = "573043139135";
+
+    function cotizar(servicio) {
+        const msg = encodeURIComponent("Hola! Me interesa el servicio de: " + servicio);
+        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg, "_blank");
+    }
+
+    function cotizarTour(nombrePlan, idGuia) {
+        const quiereGuia = document.getElementById(idGuia).checked;
+        const mensajeGuia = quiereGuia ? " (CON SERVICIO DE GUÍA 🚩)" : "";
+        const msg = encodeURIComponent("Hola Family Vacations Tours! Me interesa el plan de " + nombrePlan + mensajeGuia);
+        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg, "_blank");
+    }
+
+    function cotizarPersonalizado() {
+        const destino = document.getElementById('destino-otro').value;
+        const quiereGuia = document.getElementById('con-guia').checked;
+        const extraGuia = quiereGuia ? " con servicio de GUÍA 🚩" : "";
+        const textoDestino = destino ? "hacia " + destino : "fuera de la ciudad";
+        const msg = encodeURIComponent("Hola! Quisiera cotizar un viaje " + textoDestino + extraGuia);
+        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg, "_blank");
+    }
+
+    function enviarFormulario() {
+        const nombre = document.getElementById('form-nombre').value;
+        const tel = document.getElementById('form-whatsapp').value;
+        const fecha = document.getElementById('form-fecha').value;
+        const hora = document.getElementById('form-hora').value;
+
+        if(nombre === "" || tel === "") {
+            alert("Por favor completa tu nombre y WhatsApp");
+            return;
+        }
+
+        const msg = encodeURIComponent("NUEVA RESERVA:\n👤 Nombre: " + nombre + "\n📱 WhatsApp: " + tel + "\n📅 Fecha: " + fecha + "\n⏰ Hora: " + hora);
+        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg, "_blank");
+        alert("¡Solicitud enviada!");
+    }
+</script>
+
+</body>
+</html>
